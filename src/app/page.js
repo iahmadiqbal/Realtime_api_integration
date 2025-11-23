@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <>
-      <h1>RealTime API Integration with Tanstack Query</h1>
+      <h1>tanstack Query is here</h1>
     </>
   );
 }
