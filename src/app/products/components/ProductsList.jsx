@@ -15,7 +15,15 @@ const ProductsList = () => {
 
       <ul>
         {data?.map((item) => (
-          <li key={item.id}>{item.title}</li>
+          <li key={item.id}>
+            <h2>{item.title}</h2>
+            <p>{item.description}</p>
+            <p>{item.body}</p>
+            <p>Category: {item.category}</p>
+            {item.image && (
+              <img src={item.image} alt={item.title} width={100} />
+            )}
+          </li>
         ))}
       </ul>
     </>

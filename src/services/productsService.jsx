@@ -13,3 +13,9 @@ export const getAllProducts = async () => {
     throw error;
   }
 };
+
+// Get a single product by ID
+
+//   update  a product by ID
+
+//   delte a product by ID
