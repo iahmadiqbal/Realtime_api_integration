@@ -1,5 +1,4 @@
-import "./globals.css";
-import ReactQueryProvider from "./ReactQueryProvider/page";
+// import "./globals.css";
 
 // export const metadata = {
 //   title: "CRUD OPERATION",
@@ -9,9 +8,7 @@ import ReactQueryProvider from "./ReactQueryProvider/page";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <ReactQueryProvider>
-        <body>{children}</body>
-      </ReactQueryProvider>
+      <body>{children}</body>
     </html>
   );
 }
