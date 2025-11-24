@@ -2,7 +2,7 @@
 
 import { useGetAllProducts } from "@/hooks/useProducts";
 
-const ProductsList = () => {
+const GetAllProducts = () => {
   const { data, isLoading, isError } = useGetAllProducts();
   console.log("get all products", data);
 
@@ -30,4 +30,4 @@ const ProductsList = () => {
   );
 };
 
-export default ProductsList;
+export default GetAllProducts;

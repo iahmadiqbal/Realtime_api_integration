@@ -1,11 +1,11 @@
 "use client";
 
-import ProductsList from "./components/getallproducts/page";
+import GetAllProducts from "./components/getallproducts/page";
 
 export default function Home() {
   return (
     <div className="p-6">
-      <ProductsList />
+      <GetAllProducts />
     </div>
   );
 }
