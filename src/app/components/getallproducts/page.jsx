@@ -13,7 +13,7 @@ const GetAllProducts = () => {
     <>
       <h1>Product list is here</h1>
 
-      <ul>
+      <ol>
         {data?.map((item) => (
           <li key={item.id}>
             <h2>{item.title}</h2>
@@ -25,7 +25,7 @@ const GetAllProducts = () => {
             )}
           </li>
         ))}
-      </ul>
+      </ol>
     </>
   );
 };
