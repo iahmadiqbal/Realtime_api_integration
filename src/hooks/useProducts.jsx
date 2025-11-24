@@ -1,8 +1,6 @@
 "use client";
-
-import { getAllProducts } from "@/services/productsService";
-import { getSingleProduct } from "@/services/productsService";
 import { useQuery } from "@tanstack/react-query";
+import { getAllProducts, GetSingleProduct } from "@/services/productsService";
 
 // Hook to Get all products
 export const useGetAllProducts = () => {
@@ -10,6 +8,14 @@ export const useGetAllProducts = () => {
     queryKey: ["products"],
     queryFn: getAllProducts,
     staleTime: 60 * 1000,
+  });
+};
+
+export const useGetSingleProduct = (id) => {
+  return useQuery({
+    queryKey: ["singleproduct", id],
+    queryFn: () => GetSingleProduct(id),
+    enabled: !!id,
   });
 };
 
