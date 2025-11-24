@@ -15,19 +15,24 @@ export const getAllProducts = async () => {
 };
 
 // Fetch single product by ID
-export const GetSingleProduct = async (id) => {
+
+export const FetchSingleProduct = async ({ id }) => {
   try {
-    const response = await fetch(`${BASE_URL}/products/${id}`);
-    if (!response.ok) {
-      throw new Error("Failed to fetch product");
+    const singleproduct = await fetch(`${BASE_URL}/products/${id}`);
+
+    if (!singleproduct.ok) {
+      throw new Error("Failed to fetch the single product");
     }
-    const data = await response.json();
+
+    const data = await singleproduct.json();
+    console.log("get a single product", data);
     return data;
   } catch (error) {
-    console.error("Error fetching product:", error);
-    throw error;
+    console.log("something went wrong! try again", error);
+    throw new Error("Something went wrong");
   }
 };
-//   update  a product by ID
 
-//   delte a product by ID
+// update a product by ID
+
+// Delte a product by ID

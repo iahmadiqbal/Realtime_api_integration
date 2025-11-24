@@ -1,6 +1,10 @@
 "use client";
-import { useQuery } from "@tanstack/react-query";
-import { getAllProducts, GetSingleProduct } from "@/services/productsService";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import {
+  getAllProducts,
+  FetchSingleProduct,
+  updateProduct,
+} from "@/services/productsService";
 
 // Hook to Get all products
 export const useGetAllProducts = () => {
@@ -11,16 +15,16 @@ export const useGetAllProducts = () => {
   });
 };
 
-export const useGetSingleProduct = (id) => {
+//  Hook to Get single Products
+export const useFetchSingleProduct = (id) => {
   return useQuery({
-    queryKey: ["singleproduct", id],
-    queryFn: () => GetSingleProduct(id),
+    queryKey: ["products", id],
+    queryFn: () => FetchSingleProduct({ id }),
     enabled: !!id,
+    staleTime: 60 * 1000,
   });
 };
 
-//  Hook  to Get single Products
+// Hook to update the product id
 
-// Hook to update the product  By Id
-
-// Hook to delete the product  By id
+// How to delete the product through id
