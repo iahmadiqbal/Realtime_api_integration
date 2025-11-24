@@ -1,6 +1,6 @@
 "use client";
 
-import ProductsList from "./products/components/ProductsList";
+import ProductsList from "./components/getallproducts/page";
 
 export default function Home() {
   return (
