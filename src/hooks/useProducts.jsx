@@ -3,10 +3,11 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 import {
   getAllProducts,
   FetchSingleProduct,
-  updateProduct,
+  UpdateProduct,
+  DeleteProduct,
 } from "@/services/productsService";
 
-// Hook to Get all products
+// Hook to get all products
 export const useGetAllProducts = () => {
   return useQuery({
     queryKey: ["products"],
@@ -15,7 +16,7 @@ export const useGetAllProducts = () => {
   });
 };
 
-//  Hook to Get single Products
+// Hook to get a single product
 export const useFetchSingleProduct = (id) => {
   return useQuery({
     queryKey: ["products", id],
@@ -25,6 +26,16 @@ export const useFetchSingleProduct = (id) => {
   });
 };
 
-// Hook to update the product id
+// Hook to update a product by ID
+export const useUpdateProduct = () => {
+  return useMutation({
+    mutationFn: ({ id, updateData }) => UpdateProduct(id, updateData),
+  });
+};
 
-// How to delete the product through id
+// Delete the product by ID
+export const useDeleteProduct = () => {
+  return useMutation({
+    mutationFn: ({ id }) => DeleteProduct(id),
+  });
+};
